@@ -3,10 +3,10 @@
 # usage: ./deployme.sh staging sddffafaafaf
 # license: public domain
 
-application_name="WebRide"
+application_name="Webride"
 environment_name="Webride-env"
 
-EB_BUCKET=webride-bucket
+EB_BUCKET=webride-bucket1
 
 VERSION="v11"
 ZIP="code.$VERSION.zip"
@@ -14,7 +14,7 @@ ZIP="code.$VERSION.zip"
 aws configure set default.region ap-south-1
 
 # Zip up the Dockerrun file
-zip -r $ZIP Dockerrun.aws.json
+zip -r $ZIP Dockerrun1.aws.json
 
 echo "Copying new zip to S3"
 aws s3 cp $ZIP s3://$EB_BUCKET/$ZIP
